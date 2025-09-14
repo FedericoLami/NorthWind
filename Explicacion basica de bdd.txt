@@ -1,0 +1,54 @@
+📂 Tablas y roles principales
+Core del negocio (Ventas)
+
+Orders → pedidos (cabezal).
+
+OrderDetails → detalle de cada pedido (productos, cantidades, precios).
+
+Customers → clientes.
+
+Employees → vendedores/empleados que gestionan los pedidos.
+
+Shippers → transportistas (empresas de envío).
+
+Catálogo
+
+Products → productos que se venden.
+
+Categories → categorías de productos (ej. bebidas, lácteos).
+
+Suppliers → proveedores de los productos.
+
+Geografía
+
+Region → regiones grandes (ej. West, East).
+
+Territories → subdivisiones (ej. Seattle, Denver).
+
+EmployeeTerritories → relación de empleados ↔ territorios.
+
+Demografía clientes
+
+CustomerDemographics → tipos de clientes (ej. Retail, Wholesale).
+
+CustomerCustomerDemo → relación entre clientes ↔ tipo de cliente.
+
+🔑 Claves principales
+
+OrderDetails: (OrderID, ProductID) → relación muchos a muchos entre pedidos y productos.
+
+EmployeeTerritories: (EmployeeID, TerritoryID) → relación muchos a muchos entre vendedores y territorios.
+
+CustomerCustomerDemo: (CustomerID, CustomerTypeID) → relación muchos a muchos entre clientes y segmentos.
+
+🗺️ Cómo se conecta todo
+
+Orders conecta Clientes + Empleados + Shippers.
+
+OrderDetails conecta Orders + Products.
+
+Products conecta con Suppliers + Categories.
+
+Employees conecta con EmployeeTerritories → Territories → Region.
+
+Customers conecta con CustomerCustomerDemo → CustomerDemographics.
