@@ -15,4 +15,3 @@ Este proyecto utiliza la base de datos de ejemplo **Northwind** (SQL Server) par
 ## Tecnologías utilizadas  
 - SQL Server  
 - PowerPoint  
-- (Opcional) Power BI para visualizaciones más interactivas  
